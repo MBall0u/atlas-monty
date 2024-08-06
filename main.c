@@ -4,19 +4,25 @@
 *
 *
 */
-int main(char *file_name)
+int main(int argc, char *argv)
 {
 	char buf[1024];
 	size_t i;
 	int (*my_func)(stack_t **, unsigned int);
 	unsigned int line_num = 0;
-	char *str, str_p;
+	char *str, *str_p, *str2;
 	int global_int;
 	stack_t *head = NULL;
-	FILE *file = fopen(file_name, "r");
+	FILE *file;
+	if (argc == 0 || argc > 2)
+	{
+		fprintf(stderr, "USAGE: monty file\n");
+		exit(EXIT_FAILURE);
+	}
+	file = fopen(argv[1], "r");
 	if (file == NULL)
 	{
-		printf("Failed to open file.\n");
+		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
 
@@ -30,10 +36,16 @@ int main(char *file_name)
 		my_func = get_func(str);
 		if (my_func != NULL)
 		{
-			str = strtok_r(NULL, "$", &str_p);
-			sscanf(str, "%d", &global_int);
-			if (global_int != 0)
+			str2 = strtok_r(NULL, "$", &str_p);
+			sscanf(str2, "%d", &global_int);
+			if (global_int == 0)
+			{
+				fprintf(stderr, "L%d: unknown instruction %s\n", line_num, str);
+			}
+			else
 				my_func(&head, line_num);
 		}
 	}
+	free_list(&head);
+	head = NULL;
 }
