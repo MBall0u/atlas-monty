@@ -37,7 +37,7 @@ int main(int argc, char **argv)
 		my_func = get_func(str);
 		if (my_func != NULL)
 		{
-			str2 = strtok_r(NULL, "$", &str_p);
+			str2 = strtok_r(NULL, " $\n", &str_p);
 			sscanf(str2, "%d", &global_int);
 			if (global_int == 0)
 			{
