@@ -1,5 +1,5 @@
-#ifndef main_h
-#define main_h
+#ifndef monty_h
+#define monty_h
 
 #include <string.h>
 #include <stdio.h>
@@ -8,7 +8,6 @@
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
- * @prev: points to the previous element of the stack (or queue)
  * @next: points to the next element of the stack (or queue)
  *
  * Description: doubly linked list node structure
@@ -17,7 +16,6 @@
 typedef struct stack_s
 {
         int n;
-        struct stack_s *prev;
         struct stack_s *next;
 } stack_t;
 
@@ -37,5 +35,13 @@ typedef struct instruction_s
 
 void push(stack_t **stack, unsigned int i);
 void pall(stack_t **stack);
+size_t list_len(stack_t **head);
+int (*get_func(char *str))(stack_t, unsigned int);
+void nop(stack_t *stack __attribute__ ((unused)), unsigned int line_number __attribute__ ((unused)));
+void pall(stack_t **stack);
+void pint(stack_t *stack);
+void pop(stack_t **head);
+void swap(stack_t **head, unsigned int line_number);
+void add(stack_t **stack);
 
 #endif

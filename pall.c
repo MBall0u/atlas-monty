@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 /**
 *
 *
@@ -6,9 +6,11 @@
 */
 void pall(stack_t **stack)
 {
-	while (stack != NULL)
+	stack_t *temp = *stack;
+
+	while (temp != NULL)
 	{
-		printf("%d\n", stack->n);
-		stack = stack->next;
+		printf("%d\n", temp->n);
+		temp = temp->next;
 	}
 }
