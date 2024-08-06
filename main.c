@@ -47,6 +47,7 @@ int main(int argc, char **argv)
 				my_func(&head, line_num);
 		}
 	}
+	fclose(file);
 	free_list(&head);
 	head = NULL;
 }
