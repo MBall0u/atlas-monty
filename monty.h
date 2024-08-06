@@ -35,16 +35,15 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-void push(stack_t **stack, unsigned int i);
-void pall(stack_t **stack);
-size_t list_len(stack_t **head);
-int (*get_func(char *str))(stack_t, unsigned int);
-void nop(stack_t *stack __attribute__ ((unused)), unsigned int line_number __attribute__ ((unused)));
-void pall(stack_t **stack);
-void pint(stack_t *stack);
-void pop(stack_t **head);
-void swap(stack_t **head, unsigned int line_number);
-void add(stack_t **stack);
+void add(stack_t **stack, unsigned int line_number);
 void free_list(stack_t **stack);
+int (*get_func(char *str))(stack_t, unsigned int);
+int list_len(stack_t *head);
+void nop(stack_t *stack __attribute__ ((unused)), unsigned int line_number __attribute__ ((unused)));
+void pall(stack_t **stack, unsigned int line_number);
+void pint(stack_t **stack, unsigned int line_number);
+void pop(stack_t **head, unsigned int line_number);
+void push(stack_t **stack, unsigned int line_number);
+void swap(stack_t **head, unsigned int line_number);
 
 #endif
