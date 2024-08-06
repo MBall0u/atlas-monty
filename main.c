@@ -27,7 +27,7 @@ int main(int argc, char **argv)
 		exit(EXIT_FAILURE);
 	}
 
-	while ((fgets(buf, sizeof(buf), file)) != EOF)
+	while ((fgets(buf, sizeof(buf), file)) != NULL)
 	{
 		line_num++;
 		i = strlen(buf);
