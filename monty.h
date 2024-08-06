@@ -37,7 +37,7 @@ typedef struct instruction_s
 
 void add(stack_t **stack, unsigned int line_number);
 void free_list(stack_t **stack);
-int (*get_func(char *str))(stack_t, unsigned int);
+void (*get_func(char *str))(stack_t **, unsigned int);
 int list_len(stack_t *head);
 void nop(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
