@@ -4,11 +4,11 @@
 *
 *
 */
-int main(int argc, char *argv)
+int main(int argc, char **argv)
 {
 	char buf[1024];
 	size_t i;
-	int (*my_func)(stack_t **, unsigned int);
+	void (*my_func)(stack_t **, unsigned int);
 	unsigned int line_num = 0;
 	char *str, *str_p, *str2;
 	int global_int;

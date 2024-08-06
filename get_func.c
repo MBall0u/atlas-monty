@@ -4,7 +4,7 @@
  * 
  * 
 */
-int (*get_func(char *str))(stack_t, unsigned int)
+void (*get_func(char *str))(stack_t **, unsigned int)
 {
 	instruction_t ops[] = {
 		{"push", push},

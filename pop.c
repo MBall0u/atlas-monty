@@ -6,7 +6,6 @@
 */
 void pop(stack_t **head, unsigned int line_number)
 {
-	int temp_int = (*head)->n;
 	stack_t *temp = *head;
 
 	if (*head == NULL)
