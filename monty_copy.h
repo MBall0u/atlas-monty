@@ -1,5 +1,5 @@
-#ifndef monty_h
-#define monty_h
+#ifndef monty_copy_h
+#define monty_copy_h
 
 #include <string.h>
 #include <stdio.h>
