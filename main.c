@@ -50,4 +50,5 @@ int main(int argc, char **argv)
 	fclose(file);
 	free_list(&head);
 	head = NULL;
+	return (0);
 }
