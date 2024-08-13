@@ -5,8 +5,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-extern int global_int;
-
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -32,18 +30,18 @@ typedef struct stack_s
 typedef struct instruction_s
 {
         char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+        void (*f)(stack_t **stack, unsigned int line_number, int a);
 } instruction_t;
 
-void add(stack_t **stack, unsigned int line_number);
+void add(stack_t **stack, unsigned int line_number, int a);
 void free_list(stack_t **stack);
-void (*get_func(char *str))(stack_t **, unsigned int);
+void (*get_func(char *str))(stack_t **, unsigned int, int);
 int list_len(stack_t *head);
-void nop(stack_t **stack, unsigned int line_number);
-void pall(stack_t **stack, unsigned int line_number);
-void pint(stack_t **stack, unsigned int line_number);
-void pop(stack_t **head, unsigned int line_number);
-void push(stack_t **stack, unsigned int line_number);
-void swap(stack_t **head, unsigned int line_number);
+void nop(stack_t **stack, unsigned int line_number, int a);
+void pall(stack_t **stack, unsigned int line_number, int a);
+void pint(stack_t **stack, unsigned int line_number, int a);
+void pop(stack_t **head, unsigned int line_number, int a);
+void push(stack_t **stack, unsigned int line_number, int a);
+void swap(stack_t **head, unsigned int line_number, int a);
 
 #endif

@@ -1,5 +1,4 @@
 #include "monty_copy.h"
-int global_int;
 /**
 *
 *
@@ -12,7 +11,7 @@ int main(int argc, char **argv)
 	void (*my_func)(stack_t **, unsigned int);
 	unsigned int line_num = 0;
 	char *str, *str_p, *str2;
-	int global_int;
+	int a;
 	stack_t *head = NULL;
 	FILE *file;
 	if (argc == 0 || argc > 2)
@@ -38,8 +37,8 @@ int main(int argc, char **argv)
 		if (my_func != NULL)
 		{
 			str2 = strtok_r(NULL, " $\n", &str_p);
-			sscanf(str2, "%d", &global_int);
-			if (global_int == 0)
+			sscanf(str2, "%d", &a);
+			if (a == 0)
 			{
 				fprintf(stderr, "L%d: unknown instruction %s\n", line_num, str);
 			}

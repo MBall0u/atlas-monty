@@ -4,7 +4,7 @@
  * 
  * 
 */
-void pop(stack_t **head, unsigned int line_number)
+void pop(stack_t **head, unsigned int line_number, int a __attribute__ ((unused)))
 {
 	stack_t *temp = *head;
 

@@ -4,7 +4,7 @@
  * 
  * 
 */
-void swap(stack_t **head, unsigned int line_number)
+void swap(stack_t **head, unsigned int line_number, int a __attribute__ ((unused)))
 {
 	stack_t *temp = *head;
 	stack_t *temp_s = (*head)->next;

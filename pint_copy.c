@@ -4,7 +4,7 @@
  * 
  * 
 */
-void pint(stack_t **stack, unsigned int line_number)
+void pint(stack_t **stack, unsigned int line_number, int a __attribute__ ((unused)))
 {
 	if (*stack != NULL)
 		printf("%d\n", (*stack)->n);

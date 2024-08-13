@@ -4,12 +4,12 @@
 *
 *
 */
-void push(stack_t **stack, unsigned int line_number)
+void push(stack_t **stack, unsigned int line_number, int a)
 {
 	stack_t *temp;
 	stack_t *new;
 
-	if (global_int == 0)
+	if (a == 0)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
@@ -23,7 +23,7 @@ void push(stack_t **stack, unsigned int line_number)
 			exit(EXIT_FAILURE);
 		}
 
-		new->n = global_int;
+		new->n = a;
 		new->next = NULL;
 
 		if (*stack == NULL)
