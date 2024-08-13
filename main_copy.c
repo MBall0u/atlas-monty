@@ -8,7 +8,7 @@ int main(int argc, char **argv)
 {
 	char buf[1024];
 	size_t i;
-	void (*my_func)(stack_t **, unsigned int);
+	void (*my_func)(stack_t **, unsigned int, int);
 	unsigned int line_num = 0;
 	char *str, *str_p, *str2;
 	int a;
@@ -43,7 +43,7 @@ int main(int argc, char **argv)
 				fprintf(stderr, "L%d: unknown instruction %s\n", line_num, str);
 			}
 			else
-				my_func(&head, line_num);
+				my_func(&head, line_num, a);
 		}
 	}
 	fclose(file);
