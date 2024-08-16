@@ -34,18 +34,21 @@ int main(int argc, char **argv)
 			buf[i - 1] = '\0';
 		str = strtok_r(buf, " ", &str_p);
 		my_func = get_func(str);
-		if (my_func != NULL)
+		if (strcmp("pall", str) == 0 || strcmp("pint", str) == 0)
+			my_func(&head, line_num, a);
+		else
 		{
-			str2 = strtok_r(NULL, " $\n", &str_p);
-			sscanf(str2, "%d", &a);
-			if (a == 0)
+			if (my_func != NULL)
 			{
-				fprintf(stderr, "L%d: unknown instruction %s\n", line_num, str);
-			}
-			else
-			{
-				printf("%d\n", a);
-				my_func(&head, line_num, a);
+				str2 = strtok_r(NULL, " $\n", &str_p);
+				sscanf(str2, "%d", &a);
+				if (a == 0)
+					fprintf(stderr, "L%d: unknown instruction %s\n", line_num, str);
+				else
+				{
+					printf("%d\n", a);
+					my_func(&head, line_num, a);
+				}
 			}
 		}
 	}
