@@ -45,10 +45,7 @@ int main(int argc, char **argv)
 				if (a == 0)
 					fprintf(stderr, "L%d: unknown instruction %s\n", line_num, str);
 				else
-				{
-					printf("%d\n", a);
 					my_func(&head, line_num, a);
-				}
 			}
 		}
 	}
